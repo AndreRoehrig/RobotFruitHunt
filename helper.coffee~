@@ -23,3 +23,7 @@ matrixsearch = (max,x) ->
         if arraysearch(max,x[i]) >= 0 then return [i,arraysearch(max,x[i])]
         else i += 1
     return -1
+
+
+a = [[1,2,3,4,5],[1,2,3,4,6]]
+console.log matrixsearch(6,a)
