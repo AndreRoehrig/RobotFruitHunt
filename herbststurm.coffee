@@ -77,3 +77,36 @@ nearermatrix = (matrix,my_x,my_y,his_x,his_y,fac) ->
             j += 1
         i += 1
     matrix
+    
+
+
+###########################################################################
+
+new_game = ->
+
+
+
+make_move = ->
+    
+    mul = 10000000000000000000000000000
+    board = get_board()
+    boardsize = board.length * board[0].length
+    my_x = get_my_x()
+    my_y = get_my_y()
+    his_x = get_opponent_x()
+    his_y = get_opponent_y()
+    scoreboard = matrixdivider(board)
+    mapp = distancematrix(my_y,my_x,scoreboard,1.175)
+    finalmap = nearermatrix(mapp,my_x,my_y,his_x,his_y,2)
+    highscore = matrixmax(finalmap)
+    target_x = matrixsearch(highscore,finalmap)[0]
+    target_y = matrixsearch(highscore,finalmap)[1]
+
+
+    if my_x == target_x and my_y == target_y then return TAKE
+    if my_x > target_x then return WEST
+    if my_x < target_x then return EAST
+    if my_y > target_y then return NORTH
+    if my_y < target_y then return SOUTH
+
+    PASS
