@@ -33,6 +33,7 @@ matrixdivider = (x) ->
 arraymax = (x) ->
     Math.max x...
 
+
 matrixmax = (x) ->
     Math.max (arraymax(array) for array in x)...
 
@@ -57,6 +58,8 @@ distancearray = (x_pos,x,y,fac) ->
         i += 1
     return x
 
+
+
 distancematrix = (x_pos,y_pos,x,fac) ->
     i = 0
     while i < x.length
@@ -73,6 +76,8 @@ nearermatrix = (matrix,my_x,my_y,his_x,his_y,fac) ->
             j += 1
         i += 1
     matrix
+    
+
 
 ###########################################################################
 
