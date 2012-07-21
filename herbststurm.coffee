@@ -1,3 +1,17 @@
+arraysum = (x) ->
+    i = 0
+    sum = 0
+    while i < x.length
+        sum += x[i] 
+    return sum
+
+matrixsum = (x) ->
+    i = 0
+    sum = 0
+    while i < x.length
+        sum += arraysum(x[i])
+    return sum
+
 distance = (x1,x2) ->
     dist = x1-x2
     dist = Math.pow(dist,2)
